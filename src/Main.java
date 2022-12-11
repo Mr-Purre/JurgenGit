@@ -16,6 +16,7 @@ public class Main {
         }
 
         printCounterValue(evenCounter);
+
         printCounterValue(oddCounter);
 
         // Задача #1
