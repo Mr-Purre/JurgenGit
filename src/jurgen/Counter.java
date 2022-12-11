@@ -13,6 +13,7 @@ public class Counter {
         this.name = name;
     }
 
+
     public int increase(int value){
         counter += value;
         return counter;
