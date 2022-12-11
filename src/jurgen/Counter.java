@@ -14,6 +14,7 @@ public class Counter {
     }
 
 
+
     public int increase(int value){
         counter += value;
         return counter;
