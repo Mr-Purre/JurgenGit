@@ -18,6 +18,7 @@ public class Lesson10 {
         int length = requireInt(scanner, "Enter rectangle's length: ");
         int width = requireInt(scanner, "Enter rectangle's width: ");
 
+
         scanner.close();
 
         String horizontalLine = createHorizontalLine(length);
@@ -35,12 +36,14 @@ public class Lesson10 {
     static void printRectangle(String horizontalLine, String verticalLines) {
         System.out.print(horizontalLine + verticalLines + horizontalLine);
     }
-
+    static final String HORIZONTALLINE = "==";
+    static final String VERTICALLINE = "||";
     static String createHorizontalLine(int length) {
         String horizontalLine = " ";
 
+
         for (int i = 0; i < length; i++) {
-            horizontalLine += "-";
+            horizontalLine += HORIZONTALLINE;
         }
 
         horizontalLine += " \n";
