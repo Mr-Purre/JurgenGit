@@ -12,12 +12,24 @@ import java.util.Scanner;
  * Произвести декомпозицию по своему усмотрению. Рекомендую скинуть на проверку. Контакт ниже.
  */
 public class Lesson10 {
+
+    public static final String RECTANGLE_LENGTH_REQUIRE_MESSAGE = "Enter rectangle's length: ";
+    public static final String RECTANGLE_WIDTH_REQUIRE_MESSAGE = "Enter rectangle's width: ";
+
+    //    Увеличиваем количество угловый пробелов, поскольку вертикальная граница теперь занимает 2 символа
+    public static final String RECTANGLE_EMPTY_ELEMENT = "  ";
+    public static final String RECTANGLE_HORIZONTAL_ELEMENT = "==";
+    public static final String RECTANGLE_VERTICAL_ELEMENT = "||";
+    public static final String EMPTY_STRING = "";
+    public static final char NEW_LINE_SYMBOL = '\n';
+
     public static void main(String[] args) {
+
+
         Scanner scanner = new Scanner(System.in);
 
         int length = requireInt(scanner, "Enter rectangle's length: ");
         int width = requireInt(scanner, "Enter rectangle's width: ");
-
 
         scanner.close();
 
@@ -36,17 +48,16 @@ public class Lesson10 {
     static void printRectangle(String horizontalLine, String verticalLines) {
         System.out.print(horizontalLine + verticalLines + horizontalLine);
     }
-    static final String HORIZONTALLINE = "==";
-    static final String VERTICALLINE = "||";
-    static String createHorizontalLine(int length) {
-        String horizontalLine = " ";
 
+    static String createHorizontalLine(int length) {
+        String horizontalLine = RECTANGLE_EMPTY_ELEMENT;
 
         for (int i = 0; i < length; i++) {
-            horizontalLine += HORIZONTALLINE;
+            horizontalLine += RECTANGLE_HORIZONTAL_ELEMENT;
         }
 
-        horizontalLine += " \n";
+        horizontalLine += RECTANGLE_EMPTY_ELEMENT + NEW_LINE_SYMBOL;
+
 
         return horizontalLine;
     }
@@ -54,7 +65,7 @@ public class Lesson10 {
     static String createVerticalLines(int length, int width) {
         String verticalLinesUnit = getVerticalLinesUnit(length);
 
-        String verticalLines = "";
+        String verticalLines = EMPTY_STRING;
 
         for (int i = 0; i < width; i++) {
             verticalLines += verticalLinesUnit;
@@ -63,13 +74,13 @@ public class Lesson10 {
     }
 
     static String getVerticalLinesUnit(int length) {
-        String verticalLinesUnit = "|";
+        String verticalLinesUnit = RECTANGLE_VERTICAL_ELEMENT;
 
         for (int i = 0; i < length; i++) {
-            verticalLinesUnit += " ";
+            verticalLinesUnit += RECTANGLE_EMPTY_ELEMENT;
         }
 
-        verticalLinesUnit += "|\n";
+        verticalLinesUnit += RECTANGLE_VERTICAL_ELEMENT + NEW_LINE_SYMBOL;
         return verticalLinesUnit;
     }
 }
