@@ -1,4 +1,4 @@
-package jurgen;
+package com.walking.lesson_03;
 
 import java.util.Scanner;
 
