@@ -1,4 +1,4 @@
-package jurgen;
+package com.walking.lesson_11;
 
 public class Counter {
     public String name;
